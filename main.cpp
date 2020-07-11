@@ -4,10 +4,6 @@
 #include <string>
 using namespace sf;
 
-struct point {
-	int x, y;
-};
-
 int main() {
 
 	srand(time(0));
@@ -40,10 +36,10 @@ int main() {
 	textScore.setOutlineColor(sf::Color::Black);
 	textScore.setOutlineThickness(3);
 
-	point plat[20];
+	sf::Vector2i plat[20];
 
 	// schDir == 0 => nu trebuie schimbat nimic, 1 == spre dreapta, -1 == spre stanga
-	// lr == LeftRight == directia spre care se uita Kara 
+	// lr == LeftRight == directia spre care se uita Kara
 	int schDir = 1;
 	int lr = -1;
 
@@ -114,7 +110,7 @@ int main() {
 				plat[i].y = plat[i].y - dy;
 
 				if (plat[i].y > 533) {
-					plat[i].y = 0; 
+					plat[i].y = 0;
 					plat[i].x = rand() % 330 + 10;
 
 					if (gameOver == 0) {
